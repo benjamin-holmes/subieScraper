@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.js"
+      integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+      crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+      "use strict";
+      $(function() {
+        console.log("page loaded");
+        $.post('/subieScraper/getAds', (data) => {
+          console.log('data');
+        });
+      });
+    </script>
+    <title>SubieScraper</title>
+  </head>
+  <body>
+    <h1>SubieScraper</h1>
+    <div id="listContainer">
+      <h2>Current Subaru Ads</h2>
+      <ul id="subaruList">
+
+      </ul>
+    </div>
+  </body>
+</html>
