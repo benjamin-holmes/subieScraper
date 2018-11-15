@@ -1,0 +1,23 @@
+{
+  "name": "subiescraper",
+  "version": "0.1.0",
+  "description": "Site that will scrape craigslit for Subaru ads for me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjamin-holmes/subieScraper.git"
+  },
+  "keywords": [
+    "Subaru",
+    "scraper"
+  ],
+  "author": "Benjamin Holmes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benjamin-holmes/subieScraper/issues"
+  },
+  "homepage": "https://github.com/benjamin-holmes/subieScraper#readme"
+}
