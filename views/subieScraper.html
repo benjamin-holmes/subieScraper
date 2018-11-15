@@ -3,12 +3,26 @@
   <head>
     <style media="screen">
       .ad {
-        background-color: pink;
-        width: 600px;
+        text-align: center;
+        background-color: lightgrey;
+        width: auto;
+        margin: auto;
+        padding: 10px;
+        border-style: solid;
+        border-width: 1px;
+      }
+      .listContainer {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        background-color: lightblue;
+        margin: 35px;
+        padding: 10px;
       }
       img {
+        height: auto;
+        width: auto;
         margin: auto;
-        padding: auto;
+        padding: 10px;
       }
     </style>
     <meta charset="utf-8">
@@ -21,21 +35,13 @@
       "use strict";
       $(function() {
         console.log("page loaded");
+        let $container = $('div');
+        console.log($container);
         $.post('/subieScraper/getAds', (data) => {
           let ads = JSON.parse(data);
           ads.forEach((ad) => {
             // Create and append new ad
-            console.log(ads.length);
-            $('body').after($(
-            `<div class="ad">
-              <h3">${ad.title}</h3>
-              <img src="${ad.image}" alt="">
-              <ul>
-                <li>${ad.price}</li>
-                <li><a href=${ad.link}>Link</a></li>
-              </ul>
-            </div>`
-            ));
+            $container.append($(`<div class="ad"><h3>${ad.title}</h3><img src="${ad.image}" alt=""><p><b>${ad.price} - <a href="${ad.link}">Go to listing</a></b></p></div>`));
           });
         });
       });
@@ -44,11 +50,9 @@
   </head>
   <body>
     <h1>SubieScraper</h1>
-    <div id="listContainer">
-      <h2>Current Subaru Ads</h2>
-      <ul id="subaruList">
+    <h2>Current Subaru Ads</h2>
+    <div class="listContainer">
 
-      </ul>
     </div>
   </body>
 </html>

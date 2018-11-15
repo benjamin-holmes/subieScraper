@@ -45,6 +45,7 @@ function scrape(firstPage)
     rp(ad.link).then((html) => {
       let imgSrc = $('div > img', html)[0].attribs.src;
       ad.setImage(imgSrc);
+      // console.log($('.thumb', html)[0].attribs);
     });
   }
   setTimeout(() => {return JSON.stringify(ads)}, 1000);
